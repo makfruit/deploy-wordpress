@@ -15,9 +15,11 @@ WP-CLI is a command line interface to manage Wordpress sites installed locally. 
 
 For MAMP users: to make WP-CLI work well with MAMP, you will need to add two environment variables to your system. Follow these steps to do that
 - Find the PHP version your MAMP installation is using. This command should help:
+
 ``ls /Applications/MAMP/bin/php/ | sort -n | tail -1``
 
 - Add these export instructions to your shell profile file (located at ~/.zshrc if you use zsh, and ~/.bashrc for bash):
+
 ``
 export PATH=/Applications/MAMP/bin/php/php5.5.10/bin:$PATH
 export WP_CLI_PHP="/Applications/MAMP/bin/php/php5.5.10/bin/php"
@@ -29,10 +31,12 @@ The "php5.5.10" value should be replaced with the PHP version you found on the p
 Save it to your computer or to the server where you're going to use it.
 
 ### 3. Make sure the fdile is executable.
+
 ``chmod 755 deploy_wordpress.sh``
 
 ### 4. Configure the script 
 Open the script in a text editor and find the "Config" block. Make sure to fill it according to your local setup
+
 ``
 www_dir="~/www"
 new_wp_dir=${1}
