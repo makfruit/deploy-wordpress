@@ -1,5 +1,9 @@
 # deploy-wordpress
-Shell script to quickly install and pre-configure a blank WordPress site:
+Shell script to quickly install and pre-configure a blank WordPress site.
+
+To test various dev versions of a Wordpress plugin we're building, we often need to create a new clean WordPress "sandbox" locally. Downloading, setting up and configuring WordPress each time could be laborious. This shell script automates this and saves our time. You can use it too, if you're developing a Wordpress plugin or theme.
+
+What it does:
 - Creates a new directory in your www directory
 - Download and install the latest version of Wordpress to that directory
 - Create and fill a new mysql database
