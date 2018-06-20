@@ -33,7 +33,7 @@ wppassword="password"
 wpemail="admin@example.com"
 
 sitename=${1}
-plugins_to_install="ecwid-shopping-cart google-sitemap-generator wordpress-seo"
+plugins_to_install="ecwid-shopping-cart google-sitemap-generator"
 
 
 
@@ -58,10 +58,14 @@ PHP
 
 wp db reset --yes
 wp core install --url="${new_site_url}" --title="${sitename}" --admin_user=${wpuser} --admin_password=${wppassword} --admin_email=${wpemail}
-wp rewrite structure '/%postname%/'
+wp rewrite structure '/%postname%/' --hard
+
 
 # Install plugins
 wp plugin install ${plugins_to_install} --activate
+
+# Uninstall some plugins
+wp plugin uninstall akismet hello.php
 
 # Echo results and open site admin backend
 echo "New WordPress site installed at ${new_site_url}"
